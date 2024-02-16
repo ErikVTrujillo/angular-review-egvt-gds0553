@@ -1,0 +1,40 @@
+<form [formGroup]="registerForm" (ngSubmit)="enviarUsuario()">
+    <p-card header="Registrar Miembro" [style]="{width:'360px'}">
+        <div class="field">
+            <input type="text" pInputText formControlName="fullname" 
+            placeholder="Nombre Completo" class="w-full"/>
+        </div>
+        <small *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)" class="bloc, p-error">
+            <div *ngIf="fullname.hasError('required')">Ingresa el nombre completo</div>
+        </small>
+
+        <div class="field">
+            <input type="text" pInputText formControlName="email" 
+            placeholder="Ingresa Email" class="w-full"/>
+        </div>
+        <small *ngIf="email.invalid && (email.dirty || email.touched)" class="bloc, p-error">
+            <div *ngIf="email.hasError('required')">Ingresa el Email</div>
+            <div *ngIf="email.hasError('email')">El email es incorrecto</div>
+        </small>
+
+        <div class="field">
+            <p-password formControlName="password" placeholder="Ingresa contraseña" [toggleMask]="true" styleClass="w-full"></p-password>
+        </div>
+
+        <div class="field">
+            <p-password formControlName="confirmPassword" placeholder="Confirmar Contraseña" [toggleMask]="true" styleClass="w-full"></p-password>
+        </div>
+
+        <small *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="bloc p-error">Confirmar contraseña</small>
+
+        <small 
+        class="bloc p-error"
+        *ngIf="registerForm.errors?.['passwordMismatch'] && confirmPassword.valid &&  password.valid">Las contraseñas no coinciden!!</small>
+        
+        <p-button type="submit" label="Registrar" styleClass="w-full" [disabled]="registerForm.invalid"></p-button>
+
+        <div class="mt2">
+            ¿Ya tienes cuenta? <a routerLink="/login">Ingresar</a>
+        </div>
+    </p-card>
+</form>

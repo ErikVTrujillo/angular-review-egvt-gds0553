@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "51dc",
+      "fullname": "erik",
+      "email": "erik@gmail.com",
+      "password": "erikt123"
+    },
+    {
+      "id": "5fa0",
+      "fullname": "erik",
+      "email": "erik@gmail.com",
+      "password": "erik1234"
+    },
+    {
+      "id": "8261",
+      "fullname": "erikg",
+      "email": "erikg@gmail.com",
+      "password": "erik1234"
+    },
+    {
+      "id": "1876",
+      "fullname": "Jose",
+      "email": "jose@gmail.com",
+      "password": "jose123"
+    },
+    {
+      "id": "a1d8",
+      "fullname": "Erik Gpe",
+      "email": "erikk@gmail.com",
+      "password": "erikk123"
+    },
+    {
+      "id": "522a",
+      "fullname": "erikva",
+      "email": "erikv@gmail.com",
+      "password": "erik1234"
+    }
+  ]
+}
